@@ -13,11 +13,16 @@ spring:
       globalcors:
         cors-configurations:
           '[/**]':
-          allowedOrigins:
-            - 'http://localhost:3000'
-          allowedMethods: '*'
-          allowedHeaders: '*'
-          allowedCredentials: true
+            allowedOrigins:
+              - 'http://localhost:3000' # 허용하려는 도메인
+            allow-credentials: true # 요청 시 인증 정보를 전송하도록 허가
+            allowedHeaders: '*' # 허용하려는 헤더
+            allowedMethods: # 허용하려는 HTTP 메서드
+              - PUT
+              - GET
+              - POST
+              - DELETE
+              - OPTIONS
 
       routes:
         - id: member-service

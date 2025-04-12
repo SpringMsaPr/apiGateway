@@ -22,7 +22,7 @@ public class JwtAuthFilter implements GlobalFilter {
         "/member/doLogin",
         "/member/refresh-token",
         "/product/list"
-    );
+    );// 상품 목록 조회는 로그인 한 회원이 아니더라도 가능
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
