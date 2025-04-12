@@ -24,8 +24,8 @@ spring:
           predicates:
             - Path=/member-service/**
           filters:
-            - StripPrefix=1
-          uri: lb://member-service
+            - StripPrefix=1 # 접두어 제거 후 서비스 서버에게 요청 전달
+          uri: lb://member-service # 유레카 서버 질의, lb : 로드 벨런서
         - id: order-service
           predicates:
             - Path=/order-service/**
