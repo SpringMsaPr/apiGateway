@@ -37,7 +37,7 @@ public class JwtAuthFilter implements GlobalFilter {
 
         try {
 
-            if(bearerToken == null || !bearerToken.startsWith("Bearer ")){
+            if(bearerToken == null){
                 throw new IllegalArgumentException("token 관련 예외 발생");
             }
 
@@ -56,7 +56,7 @@ public class JwtAuthFilter implements GlobalFilter {
                     .request(
                             builder -> builder
                                     .header("X-User-Id", userId)
-                                    .header("X-User-Role", role)
+                                    .header("X-User-Role", "ROLE_" + role)
                     )
                     .build();
 
